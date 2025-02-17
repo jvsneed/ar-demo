@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Sorry, this chair only exists in our dreams... for now!",
         "But this is just a mockup. Pretty though, right? ✨",
         "If I could actually add this to cart, I'd buy 10!",
-        "Psst... this is just pretend, but you have great taste! 👌",
+        "This is just pretend, but you have great taste! 👌",
         "Loading... just kidding, it's a demo page!",
         "Error 418: I'm a teapot... just kidding, I'm a demo page!",
         "In a parallel universe, this button totally works!"
