@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocoon Chair | OBLIQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <h1 class="logo">OBLIQ</h1>
+            <div class="nav-icons">
+                <button aria-label="Search"><img src="assets/icons/magnifying-glass-thin.svg" alt=""></button>
+                <button aria-label="Cart"><img src="assets/icons/shopping-bag-thin.svg" alt=""></button>
+                <button aria-label="Menu"><img src="assets/icons/list-thin.svg" alt=""></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="product">
+        <div class="product-gallery">
+            <div class="product-image-container">
+                <img src="assets/products/chair-front.jpg" alt="Cocoon Chair" class="product-image" id="main-image">
+                <a href="https://dev.portfoliov2-5k8.pages.dev/xr/ChairProject.usdz"
+                   target="-blank"
+                   rel="ar"
+                   aria-label="View in AR"
+                   class="ar-button">
+                    <img src="assets/icons/cube-focus-thin.svg" alt="AR view" class="ar-icon">
+                </a>
+            </div>
+            <div class="product-thumbnails">
+                <button class="gallery-nav" aria-label="Previous image" id="prev-button">
+                    <img src="assets/icons/arrow-left-thin.svg" alt="Previous">
+                </button>
+                <div class="thumbnail-container" id="thumbnail-container">
+                    <img src="assets/products/chair-side.jpg" alt="Side view" class="thumbnail" data-index="0">
+                    <img src="assets/products/chair-front.jpg" alt="Front view" class="thumbnail active" data-index="1">
+                    <img src="assets/products/chair-back.jpg" alt="Back view" class="thumbnail" data-index="2">
+                </div>
+                <button class="gallery-nav" aria-label="Next image" id="next-button">
+                    <img src="assets/icons/arrow-right-thin.svg" alt="Next">
+                </button>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h2 class="product-title">Cocoon Chair</h2>
+            <p class="product-price">$399</p>
+            <p class="product-description">
+                Wrap yourself in comfort without compromising on style. 
+                The Obliq Cocoon Chair blends bold geometry with soft curves, 
+                creating a striking yet inviting space to unwind.
+            </p>
+            <div class="button-group">
+                <button class="product-add-to-cart">Add to Cart</button>
+                <button class="product-favorite" aria-label="Add to favorites">
+                    <img src="assets/icons/heart.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'Chillax-Variable';
+    src: url('fonts/Chillax-Variable.woff2') format('woff2'),
+         url('fonts/Chillax-Variable.woff') format('woff'),
+         url('fonts/Chillax-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GeneralSans-Variable';
+    src: url('fonts/GeneralSans-Variable.woff2') format('woff2'),
+         url('fonts/GeneralSans-Variable.woff') format('woff'),
+         url('fonts/GeneralSans-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+}
+
+:root {
+    --color-background: #F5F4F2;
+    --color-text: #212930;
+    --color-accent:rgb(159, 73, 12);
+    --spacing-unit: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'GeneralSans-Variable', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: var(--spacing-unit) 1rem;
+    background-color: var(--color-background);
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Chillax-Variable', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-icons {
+    display: flex;
+    gap: var(--spacing-unit);
+}
+
+.nav-icons button {
+    background: none;
+    border: none;
+    padding: var(--spacing-unit);
+    cursor: pointer;
+}
+
+.nav-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.product {
+    margin-top: 60px;
+    padding: var(--spacing-unit) 1rem;
+    max-width: 100%;
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.ar-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.ar-button:hover {
+    transform: scale(1.1);
+}
+
+.ar-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.product-info {
+    padding: calc(var(--spacing-unit) * 2) 0;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-unit);
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.product-description {
+    font-size: 16px;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.product-add-to-cart {
+    flex: 1;
+    padding: calc(var(--spacing-unit) * 2);
+    background-color: var(--color-text);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'GeneralSans-Variable', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-favorite {
+    width: 56px;
+    background-color: var(--color-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.product-favorite:hover {
+    transform: scale(1.05);
+}
+
+.product-favorite img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+}
+
+.product-thumbnails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding: 16px 0;
+    width: 100%;
+    backdrop-filter: blur(4px);
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.thumbnail {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.thumbnail.active {
+    width: 72px;
+    height: 72px;
+    opacity: 1;
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail:hover {
+    opacity: 0.9;
+}
+
+.gallery-nav {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    border-radius: 50%;
+}
+
+.gallery-nav:hover {
+    transform: scale(1.1);
+}
+
+.gallery-nav img {
+    width: 24px;
+    height: 24px;
+}
