@@ -9,15 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const continueButton = document.getElementById('continue-anyway');
         const arButton = document.querySelector('.ar-button');
         
-        // Hide AR button on desktop
         if (arButton) {
             arButton.style.display = 'none';
         }
 
-        // Show desktop message
         desktopMessage.style.display = 'block';
 
-        // Handle continue anyway button
         continueButton.addEventListener('click', () => {
             desktopMessage.style.display = 'none';
         });
@@ -27,16 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbnails = document.querySelectorAll('.thumbnail');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
-    let currentIndex = 1; // Start with middle image
+    let currentIndex = 1;
 
     function updateGallery(newIndex) {
-        // Remove active class from all thumbnails
         thumbnails.forEach(thumb => thumb.classList.remove('active'));
         
-        // Add active class to current thumbnail
         thumbnails[newIndex].classList.add('active');
         
-        // Update main image
         mainImage.src = thumbnails[newIndex].src;
         mainImage.alt = thumbnails[newIndex].alt;
         
@@ -62,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGallery(newIndex);
     });
 
-    // Optional: Add keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') prevButton.click();
         if (e.key === 'ArrowRight') nextButton.click();
@@ -80,13 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "In a parallel universe, this button totally works!"
     ];
 
-    // Get random response
     const getRandomResponse = () => {
         const index = Math.floor(Math.random() * sillyResponses.length);
         return sillyResponses[index];
     };
 
-    // Add fun responses to various elements
     const funElements = [
         '.product-add-to-cart',
         '.product-favorite',
@@ -100,13 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                // Create and show toast message
                 const toast = document.createElement('div');
                 toast.className = 'fun-toast';
                 toast.textContent = getRandomResponse();
                 document.body.appendChild(toast);
 
-                // Remove toast after animation
                 setTimeout(() => {
                     toast.remove();
                 }, 3000);
@@ -114,13 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Specifically target only the non-functional interactive elements
     const mockButtons = [
-        '.nav-icons button',        // Navigation menu icons
-        '.product-add-to-cart',     // Add to cart button
-        '.product-favorite',        // Heart/favorite button
-        '.footer-section a',        // All footer links
-        '.footer-section button'    // Any footer buttons
+        '.nav-icons button',        
+        '.product-add-to-cart',     
+        '.product-favorite',       
+        '.footer-section a',       
+        '.footer-section button'   
     ];
 
     mockButtons.forEach(selector => {
@@ -129,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                // Remove any existing toasts first
                 const existingToasts = document.querySelectorAll('.fun-toast');
                 existingToasts.forEach(toast => toast.remove());
                 
@@ -138,10 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 toast.textContent = getRandomResponse();
                 document.body.appendChild(toast);
 
-                // Handle touch events
                 toast.addEventListener('touchstart', e => e.preventDefault());
                 
-                // Remove toast after animation
                 setTimeout(() => {
                     toast.style.animation = 'toastIn 0.3s ease reverse';
                     setTimeout(() => toast.remove(), 300);
